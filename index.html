@@ -6,9 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/index.css" />
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
-    <title>Index</title>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Dashbpard</title>
   </head>
-  <body>
+  <body hidden>
+    <div class="navbar">
+      <div class="hamburger-menu">
+        <i class="bx bx-menu" id="btn-2"></i>
+      </div>
+    </div>
     <div class="sidebar">
       <div class="logo-content">
         <div class="logo">
@@ -19,32 +25,39 @@
       </div>
       <ul class="nav-list">
         <li>
-          <a href="#">
+          <a href="index.html">
             <i class="bx bxs-home"></i>
             <span class="link-name">Dashboard</span>
           </a>
           <span class="show">Dashboard</span>
         </li>
         <li>
-          <a href="#">
+          <a href="daftarMatkul.html">
             <i class="bx bxs-book"></i>
             <span class="link-name">Materi Kuliah</span>
           </a>
           <span class="show">Materi Kuliah</span>
         </li>
         <li>
-          <a href="#">
+          <a href="tugas.html">
             <i class="bx bxs-notepad"></i>
             <span class="link-name">Tugas</span>
           </a>
           <span class="show">Tugas</span>
         </li>
         <li>
-          <a href="#">
+          <a href="diskusi.html">
             <i class="bx bxs-conversation"></i>
             <span class="link-name">Diskusi</span>
           </a>
           <span class="show">Diskusi</span>
+        </li>
+        <li>
+          <a href="jadwalKuliah.html">
+            <i class="bx bxs-calendar"></i>
+            <span class="link-name">Jadwal</span>
+          </a>
+          <span class="show">Jadwal</span>
         </li>
       </ul>
       <div class="profile-content">
@@ -69,14 +82,84 @@
       </div>
     </div>
     <div class="home-content">
-        <div class="home-text">
-            <h4>Hallo, Muh. Alex Saputra</h4>
-            <h4>20.11.3567</h4>
+      <div class="home-header">
+        <div class="home-header_search">
+          <i class="bx bx-search search-icon"></i>
+          <input type="text" id="search-input" />
         </div>
-        <div class="home-profile">
-            <i class='bx bxs-user-circle'></i>
+        <div class="home-header_profil">
+          <i class="bx bxs-user-circle profil-icon"></i>
         </div>
+      </div>
+      <div class="home-list">
+        <div class="home-index">
+          <div class="home-index_card-first">
+            <div class="home-index_card-qr">
+              <img src="assets/img/qr.png" alt="" id="qr-img" />
+            </div>
+            <div class="home-index_card-status">
+              <img src="assets/img/status.png" alt="" id="status-img" />
+              <h1>Aktif</h1>
+            </div>
+          </div>
+          <div class="home-index-main">
+            <div class="home-index_card-last">
+              <div class="home-index_card-kiri">
+                <h1>Info Kuliah</h1>
+                <ol class="home-list_jadwal">
+                  <li>Pengenalan Web Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                </ol>
+              </div>
+            </div>
+            <div class="home-index_card-lastnew">
+              <div class="home-index_card-kanan">
+                <h1>info</h1>
+                <ol class="home-list_jadwal">
+                  <li>Pengenalan Web Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="assets/js/index.js"></script>
+    <script src="assets/js/login.js"></script>
+    <script>
+      function deadline() {
+        let audio = new Audio("assets/img/mixkit-critical-alarm-1004.wav");
+        Swal.fire({
+          icon: "warning",
+          title: "Deadline Hari Ini Banyak, Mohon dikerjakan segera!",
+          width: 600,
+          padding: "3em",
+          color: "#716add",
+          background: "#fff",
+          backdrop: `
+          rgba(0,0,123,0.4)
+          url("assets/img/deadline.gif")
+          left top
+          `,
+        });
+        audio.play();
+        const body = document.querySelector("body");
+        body.removeAttribute("hidden");
+      }
+      document.body.onload = deadline;
+    </script>
   </body>
 </html>

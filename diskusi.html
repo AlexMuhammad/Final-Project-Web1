@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+    <title>Diskusi</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="hamburger-menu">
+        <i class="bx bx-menu" id="btn-2"></i>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="logo-content">
+        <div class="logo">
+          <img src="assets/img/amikom.png" alt="amikom" />
+          <!-- <div class="logo-name">Universitas Amikom</div> -->
+        </div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <a href="index.html">
+            <i class="bx bxs-home"></i>
+            <span class="link-name">Dashboard</span>
+          </a>
+          <span class="show">Dashboard</span>
+        </li>
+        <li>
+          <a href="daftarMatkul.html">
+            <i class="bx bxs-book"></i>
+            <span class="link-name">Materi Kuliah</span>
+          </a>
+          <span class="show">Materi Kuliah</span>
+        </li>
+        <li>
+          <a href="tugas.html">
+            <i class="bx bxs-notepad"></i>
+            <span class="link-name">Tugas</span>
+          </a>
+          <span class="show">Tugas</span>
+        </li>
+        <li>
+          <a href="diskusi.html">
+            <i class="bx bxs-conversation"></i>
+            <span class="link-name">Diskusi</span>
+          </a>
+          <span class="show">Diskusi</span>
+        </li>
+        <li>
+          <a href="jadwalKuliah.html">
+            <i class="bx bxs-calendar"></i>
+            <span class="link-name">Jadwal</span>
+          </a>
+          <span class="show">Jadwal</span>
+        </li>
+      </ul>
+      <div class="profile-content">
+        <div class="profile">
+          <ul class="profile-list">
+            <li>
+              <a href="#">
+                <i class="bx bxs-user"></i>
+                <span class="link-name">Profile</span>
+              </a>
+              <span class="show">Profile</span>
+            </li>
+            <li>
+              <form action="" id="logout">
+                <a href="#">
+                  <i class="bx bxs-log-out"></i>
+                  <span class="link-name">Log Out</span>
+                </a>
+                <span class="show">Log Out</span>
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="home-content">
+      <!-- <div class="home-header">
+        <div class="home-header_search">
+          <i class="bx bx-search search-icon"></i>
+          <input type="text" id="search-input" />
+        </div>
+        <div class="home-header_profil">
+          <i class="bx bxs-user-circle profil-icon"></i>
+        </div>
+      </div> -->
+      <div class="home-list">
+        <div class="home-list_assignment">
+          <div class="home-list_assignment-text">
+            <h1>Diskusi</h1>
+          </div>
+          <div class="home-diskusi">
+            <div class="home-diskusi-history">
+              <div class="home-diskusi-history-kiri">
+                <h3>Gaes, ada yang paham tentang subnetting?</h3>
+                <h3>Gaes, ada yang paham tentang subnetting?</h3>
+                <h3>Gaes, ada yang paham tentang subnetting?</h3>
+              </div>
+              <div class="home-diskusi-history-kanan">
+                <h3>Paham dikit aja sih bang.</h3>
+              </div>
+              <div class="home-diskusi-history-input">
+                <input type="text" placeholder="Kirimkan Pesan" />
+                <input type="submit" value="Kirim" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+      $(function () {
+        $(window).on("resize", function () {
+          if (window.innerWidth < 768) {
+            $(".sidebar").removeClass("active");
+          }
+        });
+      });
+    </script>
+    <script>
+      $("#logout").click(function (e) {
+        e.preventDefault();
+        $.ajax({
+          type: "GET",
+          url: "/data/login.json",
+          datatype: "html",
+          cache: "json",
+          success: function (response) {
+            localStorage.clear();
+            location.replace("./login.html");
+          },
+          error: function () {},
+        });
+      });
+    </script>
+  </body>
+</html>

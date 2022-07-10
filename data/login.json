@@ -1,0 +1,12 @@
+{
+  "data": {
+    "admin1": {
+      "nim": "20.11.3567",
+      "password": "123"
+    },
+    "admin2": {
+      "nim": "tes",
+      "password": "123"
+    }
+  }
+}
