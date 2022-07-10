@@ -539,7 +539,7 @@ tr:nth-child(even) {
   }
   .home-index_card-lastnew {
     margin-top: 10px;
-    background: red;
+    background: #fff;
     border-radius: 10px;
   }
   .home-profil-content {
