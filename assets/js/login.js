@@ -32,10 +32,10 @@ $("#loginForm").submit(function (event) {
 
         Toast.fire({
           icon: "success",
-          title: "Signed in successfully",
+          title: "Berhasil Login Maszeh!",
         });
         setTimeout(() => {
-          location.replace("./index.html");
+          location.replace("./dashboard.html");
           localStorage.setItem("nim", data.nim);
         }, 2000);
       } else {
