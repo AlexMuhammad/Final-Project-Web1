@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/index.css" />
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
-    <title>Daftar Materi</title>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Dashboard</title>
   </head>
-  <body>
+  <body hidden>
     <div class="navbar">
       <div class="hamburger-menu">
         <i class="bx bx-menu" id="btn-2"></i>
@@ -70,13 +71,11 @@
               <span class="show">Profile</span>
             </li>
             <li>
-              <form action="" id="logout">
-                <a href="#">
-                  <i class="bx bxs-log-out"></i>
-                  <span class="link-name">Log Out</span>
-                </a>
-                <span class="show">Log Out</span>
-              </form>
+              <a href="#">
+                <i class="bx bxs-log-out"></i>
+                <span class="link-name">Log Out</span>
+              </a>
+              <span class="show">Log Out</span>
             </li>
           </ul>
         </div>
@@ -93,53 +92,74 @@
         </div>
       </div>
       <div class="home-list">
-        <div class="home-list_assignment">
-          <div class="home-list_assignment-text">
-            <h1>Daftar Tugas</h1>
+        <div class="home-index">
+          <div class="home-index_card-first">
+            <div class="home-index_card-qr">
+              <img src="assets/img/qr.png" alt="" id="qr-img" />
+            </div>
+            <div class="home-index_card-status">
+              <img src="assets/img/status.png" alt="" id="status-img" />
+              <h1>Aktif</h1>
+            </div>
           </div>
-          <div class="home-list_assignment-content-jadwal">
-            <div class="home-list_assignment-content-card">
-              <ol class="home-list_jadwal">
-                <li><a href="materi.html" style="text-decoration:none; color: black;">Pengenalan Web Dasar</a></li>
-                <li><a href="materi.html" style="text-decoration:none; color: black;">Pengenalan Web Dasar</a></li>
-                <li><a href="materi.html" style="text-decoration:none; color: black;">Pengenalan Web Dasar</a></li>
-                <li><a href="materi.html" style="text-decoration:none; color: black;">Pengenalan Web Dasar</a></li>
-                <li><a href="materi.html" style="text-decoration:none; color: black;">Pengenalan Web Dasar</a></li>
-                <li><a href="materi.html" style="text-decoration:none; color: black;">Pengenalan Web Dasar</a></li>
-                <li><a href="materi.html" style="text-decoration:none; color: black;">Pengenalan Web Dasar</a></li>
-                <li><a href="materi.html" style="text-decoration:none; color: black;">Pengenalan Web Dasar</a></li>
-              </ol>
+          <div class="home-index-main">
+            <div class="home-index_card-last">
+              <div class="home-index_card-kiri">
+                <h1>Info Kuliah</h1>
+                <ol class="home-list_jadwal">
+                  <li>Pengenalan Web Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                </ol>
+              </div>
+            </div>
+            <div class="home-index_card-lastnew">
+              <div class="home-index_card-kanan">
+                <h1>info</h1>
+                <ol class="home-list_jadwal">
+                  <li>Pengenalan Web Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                  <li>Belajar HTML & CSS Dasar</li>
+                </ol>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <script src="assets/js/index.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="assets/js/login.js"></script>
     <script>
-      $(function () {
-        $(window).on("resize", function () {
-          if (window.innerWidth < 768) {
-            $(".sidebar").removeClass("active");
-          }
+      function deadline() {
+        let audio = new Audio("assets/img/mixkit-critical-alarm-1004.wav");
+        Swal.fire({
+          icon: "warning",
+          title: "Deadline Hari Ini Banyak, Mohon dikerjakan segera!",
+          width: 600,
+          padding: "3em",
+          color: "#716add",
+          background: "#fff",
+          backdrop: `
+          rgba(0,0,123,0.4)
+          url("assets/img/deadline.gif")
+          left top
+          `,
         });
-      });
-    </script>
-    <script>
-      $("#logout").click(function (e) {
-        e.preventDefault();
-        $.ajax({
-          type: "GET",
-          url: "/data/login.json",
-          datatype: "html",
-          cache: "json",
-          success: function (response) {
-            localStorage.clear();
-            location.replace("./login.html");
-          },
-          error: function () {},
-        });
-      });
+        audio.play();
+        const body = document.querySelector("body");
+        body.removeAttribute("hidden");
+      }
+      document.body.onload = deadline;
     </script>
   </body>
 </html>

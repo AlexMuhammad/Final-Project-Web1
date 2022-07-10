@@ -4,162 +4,56 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="assets/css/login.css" />
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <title>Dashbpard</title>
+    <title>Login</title>
   </head>
-  <body hidden>
-    <div class="navbar">
-      <div class="hamburger-menu">
-        <i class="bx bx-menu" id="btn-2"></i>
-      </div>
-    </div>
-    <div class="sidebar">
-      <div class="logo-content">
-        <div class="logo">
-          <img src="assets/img/amikom.png" alt="amikom" />
-          <!-- <div class="logo-name">Universitas Amikom</div> -->
-        </div>
-        <i class="bx bx-menu" id="btn"></i>
-      </div>
-      <ul class="nav-list">
-        <li>
-          <a href="index.html">
-            <i class="bx bxs-home"></i>
-            <span class="link-name">Dashboard</span>
-          </a>
-          <span class="show">Dashboard</span>
-        </li>
-        <li>
-          <a href="daftarMatkul.html">
-            <i class="bx bxs-book"></i>
-            <span class="link-name">Materi Kuliah</span>
-          </a>
-          <span class="show">Materi Kuliah</span>
-        </li>
-        <li>
-          <a href="tugas.html">
-            <i class="bx bxs-notepad"></i>
-            <span class="link-name">Tugas</span>
-          </a>
-          <span class="show">Tugas</span>
-        </li>
-        <li>
-          <a href="diskusi.html">
-            <i class="bx bxs-conversation"></i>
-            <span class="link-name">Diskusi</span>
-          </a>
-          <span class="show">Diskusi</span>
-        </li>
-        <li>
-          <a href="jadwalKuliah.html">
-            <i class="bx bxs-calendar"></i>
-            <span class="link-name">Jadwal</span>
-          </a>
-          <span class="show">Jadwal</span>
-        </li>
-      </ul>
-      <div class="profile-content">
-        <div class="profile">
-          <ul class="profile-list">
-            <li>
-              <a href="#">
-                <i class="bx bxs-user"></i>
-                <span class="link-name">Profile</span>
-              </a>
-              <span class="show">Profile</span>
-            </li>
-            <li>
-              <a href="#">
-                <i class="bx bxs-log-out"></i>
-                <span class="link-name">Log Out</span>
-              </a>
-              <span class="show">Log Out</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="home-content">
-      <div class="home-header">
-        <div class="home-header_search">
-          <i class="bx bx-search search-icon"></i>
-          <input type="text" id="search-input" />
-        </div>
-        <div class="home-header_profil">
-          <i class="bx bxs-user-circle profil-icon"></i>
-        </div>
-      </div>
-      <div class="home-list">
-        <div class="home-index">
-          <div class="home-index_card-first">
-            <div class="home-index_card-qr">
-              <img src="assets/img/qr.png" alt="" id="qr-img" />
-            </div>
-            <div class="home-index_card-status">
-              <img src="assets/img/status.png" alt="" id="status-img" />
-              <h1>Aktif</h1>
-            </div>
+  <body class="login">
+    <!--Container-->
+    <div id="loader" class="center"></div>
+    <div class="container">
+      <form action="#" id="loginForm" method="post">
+        <div class="header-login">
+          <div class="header-login-logo">
+            <img src="assets/img/amikom.png" alt="amikom" class="logo-img" />
           </div>
-          <div class="home-index-main">
-            <div class="home-index_card-last">
-              <div class="home-index_card-kiri">
-                <h1>Info Kuliah</h1>
-                <ol class="home-list_jadwal">
-                  <li>Pengenalan Web Dasar</li>
-                  <li>Belajar HTML & CSS Dasar</li>
-                  <li>Belajar HTML & CSS Dasar</li>
-                  <li>Belajar HTML & CSS Dasar</li>
-                  <li>Belajar HTML & CSS Dasar</li>
-                  <li>Belajar HTML & CSS Dasar</li>
-                  <li>Belajar HTML & CSS Dasar</li>
-                  <li>Belajar HTML & CSS Dasar</li>
-                </ol>
-              </div>
-            </div>
-            <div class="home-index_card-lastnew">
-              <div class="home-index_card-kanan">
-                <h1>info</h1>
-                <ol class="home-list_jadwal">
-                  <li>Pengenalan Web Dasar</li>
-                  <li>Belajar HTML & CSS Dasar</li>
-                  <li>Belajar HTML & CSS Dasar</li>
-                  <li>Belajar HTML & CSS Dasar</li>
-                  <li>Belajar HTML & CSS Dasar</li>
-                  <li>Belajar HTML & CSS Dasar</li>
-                  <li>Belajar HTML & CSS Dasar</li>
-                  <li>Belajar HTML & CSS Dasar</li>
-                </ol>
-              </div>
-            </div>
+          <div class="header-login-title">
+            <h2>UNIVERSITAS AMIKOM</h2>
+            <h2>YOGYAKARTA</h2>
+            <p>Silahkan Masukkan NIM Dan Password Anda</p>
           </div>
         </div>
-      </div>
+        <div class="input-login">
+          <div class="input-login-nim">
+            <i class="bx bxs-user icon"> </i>
+            <input type="text" name="" id="nim" class="input-field" placeholder="NIM" />
+          </div>
+          <div class="input-login-password">
+            <i class="bx bxs-lock icon"></i>
+            <input type="password" name="" id="password" class="input-field" placeholder="Password" autocomplete="" />
+          </div>
+          <div class="input-login-btn">
+            <button class="btn" id="btnSubmit" onclick="authenticate()">Login</button>
+          </div>
+        </div>
+      </form>
     </div>
-    <script src="assets/js/index.js"></script>
+    <div class="footer">
+      <p>Made &hearts; Kelompok 11</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="assets/js/login.js"></script>
     <script>
-      function deadline() {
-        let audio = new Audio("assets/img/mixkit-critical-alarm-1004.wav");
-        Swal.fire({
-          icon: "warning",
-          title: "Deadline Hari Ini Banyak, Mohon dikerjakan segera!",
-          width: 600,
-          padding: "3em",
-          color: "#716add",
-          background: "#fff",
-          backdrop: `
-          rgba(0,0,123,0.4)
-          url("assets/img/deadline.gif")
-          left top
-          `,
-        });
-        audio.play();
-        const body = document.querySelector("body");
-        body.removeAttribute("hidden");
-      }
-      document.body.onload = deadline;
+      const loader = (document.onreadystatechange = function () {
+        if (document.readyState !== "complete") {
+          document.querySelector("body").style.visibility = "hidden";
+          document.querySelector("#loader").style.visibility = "visible";
+        } else {
+          document.querySelector("#loader").style.display = "none";
+          document.querySelector("body").style.visibility = "visible";
+        }
+      });
     </script>
   </body>
 </html>
